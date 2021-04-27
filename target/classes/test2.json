@@ -1,0 +1,62 @@
+
+{
+  "testdata": [
+    {
+      "data": [
+        {
+          "username": "p123",
+          "password": "3455"
+        },
+        {
+          "username": "q123",
+          "password": "6455"
+        },
+        {
+          "username": "o123",
+          "password": "0455"
+        }
+      ],
+      "testname": "LoginTest"
+    },
+    {
+      "data": [
+        {
+          "type": "freelance"
+        },
+        {
+         "type" : "FullTime"
+        },
+        {
+          "type" : "Contract"
+        }
+      ],
+      "testname": "EmployeeInfoTest"
+    },
+    {
+      "data": [
+        {
+          "user_role": "p123",
+          "user_name": "3455",
+          "status" : "Enabled",
+          "pass" : "3434",
+          "conf_pass" : "3434"
+        },
+        {
+          "user_role": "p523",
+          "user_name": "55",
+          "status" : "Disabled",
+          "pass" : "378",
+          "conf_pass" : "999"
+        },
+        {
+          "user_role": "kjskdj",
+          "user_name": "3455",
+          "status" : "Enabled",
+          "pass" : "909",
+          "conf_pass" : "909"
+        }
+      ],
+      "testname": "SystemUsersTest"
+    }
+  ]
+}

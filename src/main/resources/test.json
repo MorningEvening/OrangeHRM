@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "user_role": "1",
+      "emp_name": "John Smith",
+      "user_name": "temp235",
+      "status": "1",
+      "pass": "automation123",
+      "conf_pass": "automation123"
+    },
+    {
+      "user_role": "1",
+      "emp_name": "Charlie Carter",
+      "user_name": "temp456",
+      "status": "0",
+      "pass": "automation456",
+      "conf_pass": "automation456"
+    },
+    {
+      "user_role": "1",
+      "emp_name": "Charlie Carter",
+      "user_name": "temp456",
+      "status": "0",
+      "pass": "automation456",
+      "conf_pass": "automation456"
+    }
+  ]
+}
