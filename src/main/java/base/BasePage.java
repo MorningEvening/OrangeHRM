@@ -68,6 +68,7 @@ public class BasePage {
             System.out.println(arr_elem);
         }
         System.out.println("-------");
+        System.out.println("Comment added just to check git first commit");
 
 //        String path_sys_data = System.getProperty("user.dir")+"/src/main/resources/test2.json";
 //        FileReader reader = new FileReader(path_sys_data);
