@@ -10,6 +10,7 @@ public class HomePage extends BasePage  {
     public By admin = By.xpath("//*[@id=\"menu_admin_viewAdminModule\"]");
     public By pim = By.xpath("//*[@id=\"menu_pim_viewPimModule\"]");
 
+
     public HomePage(WebDriver driver){
         this.driver = driver;
     }

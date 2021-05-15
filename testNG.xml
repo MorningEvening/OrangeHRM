@@ -1,16 +1,16 @@
 
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name = "Suite" >
-    <listeners>
-        <listener class-name = "listener.MyTestNGListener"/>
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name = "listener.MyTestNGListener"/>-->
+<!--    </listeners>-->
 
-    <test name="test1" parallel="classes">
-        <groups>
-            <run>
-                <include name="smoke"></include>
-            </run>
-        </groups>
+    <test name="test1">
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="smoke"></include>-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
             <class name = "testcases.LoginPageTest">
 <!--            <methods>-->
@@ -18,17 +18,17 @@
 <!--                <include name="verifyLoggedIn_test2"/>-->
 <!--            </methods>-->
             </class>
-            <class name = "testcases.EmployeeInfoTest">
+<!--            <class name = "testcases.EmployeeInfoTest">-->
 <!--            <methods>-->
 <!--                <exclude name="VerifyEmpStatus"></exclude>-->
 <!--            </methods>-->
-            </class>
-            <class name="testcases.SystemUsersTest">
+<!--            </class>-->
+<!--            <class name="testcases.SystemUsersTest">-->
 <!--                <methods>-->
 <!--                    <exclude name="verifyUsers"></exclude>-->
 <!--                    <exclude name="AddUser"></exclude>-->
 <!--                </methods>-->
-            </class>
+<!--            </class>-->
 <!--            <class name="testcases.HomePageTest">-->
 <!--                <methods>-->
 <!--                    <exclude name="adminTabTest"></exclude>-->

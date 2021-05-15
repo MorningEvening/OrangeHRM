@@ -22,7 +22,7 @@ public class LoginPageTest extends BasePage {
 
        String share_var = "just checking";
        context.setAttribute("shared_var",share_var);
-        test.log(Status.INFO, "test1 : Verifying the presence of logo");
+       test.log(Status.INFO, "test1 : Verifying the presence of logo");
        System.out.println("Thread num from verifyLoginPage_test1 " +Thread.currentThread().getId());
 
        if(pageLogin.verifyLogin()) {
@@ -35,7 +35,7 @@ public class LoginPageTest extends BasePage {
         }
     }
 
-    @Test (groups = "smoke")
+    //@Test (groups = "smoke")
     public void verifyLoggedIn_test2(){
         pageHome = pageLogin.login();
         String expected = "https://opensource-demo.orangehrmlive.com/index.php/dashboard";

@@ -28,7 +28,7 @@ public class SystemUsersTest extends BasePage {
         }
     }
 
-    @Test (groups = "sanity", dataProviderClass = TestDataProvider.class,dataProvider ="getData")
+   // @Test (groups = "sanity", dataProviderClass = TestDataProvider.class,dataProvider ="getData")
     //public void AddUser(String user_role, String emp_name, String user_name, String status, String pass, String conf_pass){
 
     public void AddUser(Map data){
@@ -60,6 +60,19 @@ public class SystemUsersTest extends BasePage {
 
         // On this page entering the data in the fields from the data provider
 
+    }
+
+    @Test
+    public void getJobTitles(){
+        pageSys = pageLogin.login().click_admin();
+        if(pageSys.verifyjobTitle("IT Manager")){
+            Assert.assertTrue(true);
+            test.pass("job title is present in the list");
+        }
+        else {
+            Assert.assertTrue(false);
+            test.fail("job title is NOT present in the list");
+        }
     }
 
 

@@ -1,9 +1,9 @@
-@BookHotelAndFight
+#@BookHotelAndFight
   Feature: Going on Holiday
            I want to book flight and hotel
 
-  @BookHotel
-  @Scenario: I want to book hotel
+#  BookHotel
+  Scenario: I want to book hotel
     Given I live in Moscow
     And I want to go on a holiday
     And We are 10 Adults

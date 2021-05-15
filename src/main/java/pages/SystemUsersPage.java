@@ -3,9 +3,11 @@ package pages;
 import base.BasePage;
 import okio.Timeout;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.util.*;
 
@@ -13,6 +15,7 @@ public class SystemUsersPage extends BasePage {
 
     By searchEmp_id = By.id("searchSystemUser_employeeName_empName");
     By searchTap_xpath =  By.xpath("//*[@id=\"searchBtn\"])");
+    By getSearchTap_xpath = By.xpath("//*[@id='search_form']/fieldset/p/input[1]");
 
     By add_user_xpath = By.xpath("//*[@id=\"btnAdd\"]");
     By user_role_id = By.id("systemUser_userType");
@@ -25,6 +28,10 @@ public class SystemUsersPage extends BasePage {
     By save_id = By.xpath("//*[@id=\"btnSave\"]");
     By user_id = By.id("searchSystemUser_userName");
 
+    By user_mgmt = By.xpath("//*[@class='current main-menu-first-level-list-item']/ul/li/a[contains(text(),'User Management')]");
+    By job_xpath= By.xpath("//*[@id=\"menu_admin_Job\"]");
+    By job_titles = By.xpath("//*[@id=\"menu_admin_viewJobTitleList\"]");
+    By list_titles = By.xpath("//*[@id=\"resultTable\"]/tbody/tr/td[2]");
 
     public  SystemUsersPage(WebDriver driver){
         this.driver = driver;
@@ -36,11 +43,12 @@ public class SystemUsersPage extends BasePage {
         wait=new WebDriverWait(driver, 20);
 
         System.out.println("wait is "+wait);
-        WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"searchBtn\"]")));
+        //WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"searchBtn\"]")));
         //search.click();
+        driver.findElement(getSearchTap_xpath).click();
 
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();",search);
+//        JavascriptExecutor executor = (JavascriptExecutor) driver;
+//        executor.executeScript("arguments[0].click();",search);
 
         List<WebElement> list_names;
         list_names = driver.findElements(By.xpath("//*[@id=\"resultTable\"]/tbody/tr/td[4]"));
@@ -125,6 +133,19 @@ public class SystemUsersPage extends BasePage {
         WebDriverWait w = new WebDriverWait(driver,20);
         WebElement element = w.until(ExpectedConditions.elementToBeClickable(save_id));
         element.click();
+    }
+
+    public Boolean verifyjobTitle(String jobTtile){
+
+        driver.findElement(job_xpath).click();
+        driver.findElement(job_titles).click();
+        List <WebElement> list = driver.findElements(list_titles);
+        for(WebElement ele : list){
+            if(ele.getText().equals(jobTtile)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

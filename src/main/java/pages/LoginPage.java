@@ -10,6 +10,7 @@ import java.util.Properties;
 public class LoginPage extends BasePage {
 
     By loginPage = By.xpath("//*[@id=\"divLogo\"]/img");
+    By forgotPass = By.xpath("//a[contains(text(),'Forgot')]");
     // when new login page is created it
     public LoginPage(WebDriver driver, Properties prop){
 
