@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" parallel="methods" name="test1(failed)" verbose="0">
+    <classes>
+      <class name="testcases.LoginPageTest">
+        <methods>
+          <include name="verifyLoginPage_test1"/>
+          <include name="setup_before_each_test"/>
+          <include name="tearDown_after_each_test"/>
+        </methods>
+      </class> <!-- testcases.LoginPageTest -->
+    </classes>
+  </test> <!-- test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->
