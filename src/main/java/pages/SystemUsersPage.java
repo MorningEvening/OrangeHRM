@@ -38,6 +38,20 @@ public class SystemUsersPage extends BasePage {
 
     }
 
+    public void selectStatus(String select_dropdown){
+
+        //WebElement mySelectedElem = driver.findElement(By.xpath("//select[@name=\"searchSystemUser[status]\"]"));
+
+        WebElement mySelectedElem = driver.findElement(By.id("select"));
+        System.out.println("myselected element " +mySelectedElem);
+        Select dropdown= new Select(mySelectedElem);
+
+        System.out.println("dropdown is " +dropdown);
+        System.out.println("dropdown select value is " +select_dropdown);
+        dropdown.selectByValue(select_dropdown);
+
+    }
+
     public Boolean VerifyEmployee(String searchEmp)  {
         driver.findElement(searchEmp_id).sendKeys(searchEmp);
         wait=new WebDriverWait(driver, 20);

@@ -8,5 +8,4 @@ listener/MyTestNGListener.class
 stepDefinitions/MyHoliday.class
 pages/LoginPageNew.class
 base/BasePage.class
-MyRunner/MyRunner.class
 pages/LoginPage.class

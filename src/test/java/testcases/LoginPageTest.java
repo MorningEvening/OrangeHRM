@@ -3,7 +3,11 @@ package testcases;
 import base.BasePage;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import org.openqa.selenium.OutputType;
+import gherkin.lexer.Th;
+import io.cucumber.java.bs.A;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeTest;
@@ -17,8 +21,8 @@ public class LoginPageTest extends BasePage {
 
     HomePage pageHome;
 
-   @Test (groups = "smoke")
-    public void verifyLoginPage_test1(ITestContext context){
+   @Test (groups = "smoke",invocationCount = 2)
+    public void verifyLoginPage_test1(ITestContext context) throws InterruptedException {
 
        String share_var = "just checking";
        context.setAttribute("shared_var",share_var);
@@ -33,6 +37,16 @@ public class LoginPageTest extends BasePage {
             Assert.assertTrue(false);
             test.fail("test1 : Logo is missing! Login page is't displayed as expected!!");
         }
+
+       Actions actions = new Actions(driver);
+       WebElement element = driver.findElement(By.xpath("//a[text()=\"Forgot your password?\"]"));
+       // //a[contains(text(),"Forgot your password?")]
+       actions.moveToElement(element).click().perform();
+//
+//       Thread.sleep(4000);
+//       Action action = actions.moveToElement(element).click().build();
+//       action.perform();
+
     }
 
     //@Test (groups = "smoke")

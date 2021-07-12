@@ -15,9 +15,15 @@ public class SystemUsersTest extends BasePage {
 
     public SystemUsersPage pageSys;
 
-    //@Test (groups = "smoke")
-    public void verifyUsers() {
+    @Test (groups = "smoke")
+    public void verifyUsers() throws InterruptedException {
+
         pageSys = pageLogin.login().click_admin();
+
+        pageSys.selectStatus("Admin");
+        Thread.sleep(3000);
+
+
         if((pageSys.VerifyUser("John Smith") == true)) {
             test.pass("Users page verified!!");
             Assert.assertTrue(true);
@@ -31,7 +37,7 @@ public class SystemUsersTest extends BasePage {
    // @Test (groups = "sanity", dataProviderClass = TestDataProvider.class,dataProvider ="getData")
     //public void AddUser(String user_role, String emp_name, String user_name, String status, String pass, String conf_pass){
 
-    public void AddUser(Map data){
+    public void AddUser(Map data) throws InterruptedException {
         pageSys = pageLogin.login().click_admin();
 
         System.out.println("Running Adduser for " +data.get("user_role"));
@@ -44,6 +50,8 @@ public class SystemUsersTest extends BasePage {
             //pageSys.AddUser(data.get("user_role"),data.get("emp_name"),data.get("user_name"),data.get("status"),data.get("pass"),data.get("conf_pass"));
             pageSys.AddUser(data);
             pageSys.SaveUser();
+
+
 //            if(pageSys.VerifyUser(user_name)){
 //                test.pass("User added successfully");
 //                Assert.assertTrue(true);
@@ -62,7 +70,7 @@ public class SystemUsersTest extends BasePage {
 
     }
 
-    @Test
+    //@Test
     public void getJobTitles(){
         pageSys = pageLogin.login().click_admin();
         if(pageSys.verifyjobTitle("IT Manager")){

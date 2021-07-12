@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONObject;
@@ -11,6 +12,8 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -49,13 +52,22 @@ public class BasePage {
         FileInputStream fp = new FileInputStream(path);
         prop.load(fp);
 
-        System.setProperty("webdriver.chrome.driver",
-                "/Users/pritipradhan/Downloads/chromedriver");
+//        System.setProperty("webdriver.chrome.driver",
+//                "/Users/pritipradhan/Downloads/chromedriver");
+
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get(prop.getProperty("url"));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        pageLogin = new LoginPage(driver,prop);
+        driver.manage().timeouts().pageLoadTimeout(20,TimeUnit.SECONDS);
+
+        WebDriverWait wait = new WebDriverWait(driver,20);
+        // just for example
+//       FluentWait wait1 = new FluentWait(driver);
+//       wait1.withTimeout(5000, TimeUnit.MILLISECONDS);
+
+        pageLogin = new LoginPage(driver,prop,wait);
 
         extent = ExtentManager.getReports();
         test = extent.createTest(res.getMethod().getMethodName().toLowerCase());

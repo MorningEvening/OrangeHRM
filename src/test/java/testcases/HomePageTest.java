@@ -10,7 +10,7 @@ public class HomePageTest extends BasePage {
 
     public HomePage pageHome;
 
-    @Test (groups = {"smoke", "browser1"})
+    @Test (groups = {"smoke", "browser1"},timeOut = 1000)
     public void adminTabTest(ITestContext context){
         String shared_cal = (String) context.getAttribute("shared_var");
         System.out.println("Shared val from adminTabTest " +shared_cal);

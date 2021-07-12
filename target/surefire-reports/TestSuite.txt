@@ -1,4 +1,33 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.147 s - in TestSuite
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 5, Time elapsed: 1.743 s <<< FAILURE! - in TestSuite
+testcases.LoginPageTest.setup_before_each_test[[TestResult name={null} status=CREATED method=LoginPageTest.verifyLoginPage_test1(org.testng.ITestContext)[pri:0, instance:testcases.LoginPageTest@53ca01a2] output={null}], org.testng.TestRunner@610d74be](0)  Time elapsed: 1.545 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 89
+Current browser version is 91.0.4472.114 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Pritis-MBP', ip: '2401:4900:5037:f8c:9413:2782:81fc:5373%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.2'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: 0   chromedriver                        0x0000000103de5b59 chromedriver + 2595673
+1   chromedriver                        0x0000000104499b33 chromedriver + 9624371
+2   chromedriver                        0x0000000103b95773 chromedriver + 169843
+3   chromedriver                        0x0000000103bb9bf6 chromedriver + 318454
+4   chromedriver                        0x0000000103bb5dc4 chromedriver + 302532
+5   chromedriver                        0x0000000103bb3032 chromedriver + 290866
+6   chromedriver                        0x0000000103be6234 chromedriver + 500276
+7   chromedriver                        0x0000000103be14f3 chromedriver + 480499
+8   chromedriver                        0x0000000103bbbcd6 chromedriver + 326870
+9   chromedriver                        0x0000000103bbcba7 chromedriver + 330663
+10  chromedriver                        0x0000000103db3b09 chromedriver + 2390793
+11  chromedriver                        0x0000000103dc0bcc chromedriver + 2444236
+12  chromedriver                        0x0000000103dc06ee chromedriver + 2442990
+13  chromedriver                        0x0000000103d9a832 chromedriver + 2287666
+14  chromedriver                        0x0000000103dc163f chromedriver + 2446911
+15  chromedriver                        0x0000000103da9299 chromedriver + 2347673
+16  chromedriver                        0x0000000103dd88b9 chromedriver + 2541753
+17  chromedriver                        0x0000000103deb008 chromedriver + 2617352
+18  libsystem_pthread.dylib             0x00007fff733e7109 _pthread_start + 148
+19  libsystem_pthread.dylib             0x00007fff733e2b8b thread_start + 15
+
+
