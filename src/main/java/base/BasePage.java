@@ -55,7 +55,9 @@ public class BasePage {
 //        System.setProperty("webdriver.chrome.driver",
 //                "/Users/pritipradhan/Downloads/chromedriver");
 
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "/usr/local/Caskroom/chromedriver/137.0.7151.119/chromedriver-mac-x64/chromedriver");
+
+        //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get(prop.getProperty("url"));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
